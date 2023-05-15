@@ -1,0 +1,88 @@
+:root {
+	--accent: #626d98;
+	--base: white;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+	--accent: white;
+	--base: #626d98;
+	}
+}
+* {
+	box-sizing:border-box;
+}
+body {
+	color: var(--accent);
+	background-color: var(--base);
+	
+	font-family: sans-serif;
+	line-height:1.5;
+}
+
+article {
+	max-width:60ch;
+	width: 100%; 
+	margin: 0 auto;
+}
+figure:has(blockquote) {
+	background-color:var(--accent);
+	color: var(--base);
+	border-radius: 0 1rem 0 1rem;
+	padding: 2rem;
+	width: 100%;
+	margin:0;
+}
+
+figure:has(blockquote) > figcaption {
+	text-align:right;
+}
+blockquote {
+	font-weight: lighter;
+	font-size:1.1rem;
+	quotes: "“" "”" "‘" "’";
+}
+blockquote::before {
+  content: open-quote;
+	font-size:3em;
+	line-height:0;
+	display:block;
+	margin-left:-1ch;
+}
+blockquote::after {
+  content: close-quote;
+
+}
+.button
+{
+    margin-top: 100px;
+    left: 50px;
+
+}
+.to-top{
+    background: white;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #111;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s ;
+    z-index: 10;
+ }
+ 
+ .to-top.active{
+    background: #111;
+   color: #fff;
+     bottom: 32px;
+     pointer-events: auto;
+     opacity: 10;
+ }
